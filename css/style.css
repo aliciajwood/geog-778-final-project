@@ -30,11 +30,11 @@ a:focus {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 .navbar-light {
-    background-color: #8b0000;
+    background-color: #7E2C1A;
 }
 
 #sidebarCollapse{
-    background-color: #8b0000;
+    background-color: #7E2C1A;
     outline: none;
     border: none;
     box-shadow: none;
@@ -42,7 +42,7 @@ a:focus {
 }
 
 #sidebarCollapse:hover {
-    background: #a50000;
+    background: #93331e;
     color: #fff;
 }
 
@@ -50,7 +50,7 @@ a:focus {
     box-shadow: none;
     outline: none !important;
     border: none;
-    background-color:"#8b0000";
+    background-color:"#7E2C1A";
 }
 
 .line {
@@ -74,7 +74,7 @@ a:focus {
 #sidebar {
     min-width: 260px;
     max-width: 260px;
-    background: #a50000;
+    background: #93331e;
     color: #fff;
     transition: all 0.3s;
     overflow-y: scroll;
@@ -89,7 +89,7 @@ a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #8b0000;
+    background: #7E2C1A;
 }
 
 #sidebar ul.components {
@@ -109,14 +109,14 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-    color: #8b0000;
+    color: #7E2C1A;
     background: #fff;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: #8b0000;
+    background: #7E2C1A;
 }
 
 a[data-toggle="collapse"] {
@@ -126,7 +126,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #8b0000;
+    background: #7E2C1A;
 }
 
 .filter-btn {

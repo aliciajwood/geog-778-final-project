@@ -26,10 +26,11 @@ require(["esri/config",
 
     const map = new Map({
         //basemap: "osm/light-gray"
-        basemap: "arcgis/newspaper"
+        //basemap: "arcgis/newspaper" //like this one but labels are beneath polygons added
+        //basemap: "arcgis/human-geography"
         //basemap: "arcgis/light-gray/base"
         //basemap: "arcgis/terrain"
-        //basemap: "arcgis/light-gray"
+        basemap: "arcgis/light-gray"
         //basemap: "arcgis/topographic"
         //basemap: "gray-vector" // basemap styles service
     });
@@ -52,7 +53,11 @@ require(["esri/config",
     
 
     //add feature layers
-    
+    const stateLayer = new FeatureLayer({
+        url:"https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/State_Incarceration_Rates/FeatureServer/0",
+        title:"Incarceration Rates"
+    });
+    map.add(stateLayer);
     
     
     // ADD SEARCH WIDGET
@@ -93,7 +98,8 @@ require(["esri/config",
     
 
     // ADD LAYER LIST WIDGET
-    
+    //DON'T THINK I WANT LAYER LIST WIDGET SINCE THE USER WILL BE CONTROLLING THE VARIABLE SELECTED IN THE SIDEBAR?????
+    /*
     view.when(() => {
         const layerList = new LayerList({
             view: view
@@ -105,7 +111,7 @@ require(["esri/config",
         // Add widget to the top right corner of the view
         view.ui.add(lyrlistExpand, "top-right");
     });
-    
+    */
 
     
     // ADD ZOOM BUTTONS
