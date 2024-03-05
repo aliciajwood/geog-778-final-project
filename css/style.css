@@ -129,27 +129,23 @@ ul ul a {
     background: #7E2C1A;
 }
 
-.filter-btn {
-    margin-left:16px;
-}
-.reset-btn {
-    margin-left:12px;
+
+.form-check {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 5px;
 }
 
-.drop-downs{
-    font-size: 0.9em;
-    margin-left:8px;
-    color:dimgrey;
+/* NOT WORKING
+.form-check-input[type="radio"]:checked {
+    background-color: green;
 }
+.form-check-input:checked {
+    background-color: #6C757D;
+}
+*/
 
-.buttons {
-    outline:none;
-    border:none;
-    border-radius:5px;
-}
-.buttons:hover{
-    background-color:#d3d3d3;
-}
+
 
 /* ---------------------------------------------------
     CONTENT STYLE
@@ -184,3 +180,5 @@ ul ul a {
         display: none;
     }
 }
+
+

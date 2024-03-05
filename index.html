@@ -38,7 +38,7 @@
             <!-- Sidebar  -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3>U.S. Incarceration Rates Explorer</h3>
+                    <h3>United States Incarceration Rates Explorer</h3>
                 </div>
 
                 <ul class="list-unstyled components">
@@ -46,13 +46,45 @@
                         <a href="#AboutSidebar" data-toggle="collapse" aria-expanded="false">About</a>
                         <ul class="collapse list-unstyled" id="AboutSidebar">
                             <li>
-                                <p>This application is a project for UW-Madison's GEOG 778. It allows users to explore disparities in various incarceration rate statistics across the United States. COMPLETE ABOUT INFO SECTION LATER.</p>
+                                <p>This application is a project for UW-Madison's GEOG 778. It allows users to explore disparities in various incarceration rate statistics across the United States. WILL ADD MORE INFO LATER.</p>
                             </li>
                         </ul>
                     </li>
                     <p></p>
                     <li class="active">
-                        <a href="#QueryFungiSidebar" data-toggle="collapse" aria-expanded="false">Toggle Variables</a>
+                        <a href="#ToggleVariablesSidebar" data-toggle="collapse" aria-expanded="false">Toggle Variables</a>
+                        <ul class="collapse list-unstyled" id="ToggleVariablesSidebar">
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="IncarcerationRateButton" checked/>
+                                    <label class="form-check-label" for="IncarcerationRateButton"> Prison Incarceration Rates </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="YouthRateButton"/>
+                                    <label class="form-check-label" for="YouthRateButton"> Juvenille Incarceration Rates </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="FelonyRateButton"/>
+                                    <label class="form-check-label" for="FelonyRateButton"> Felony Disenfranchisement </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="CaptialSentencedButton"/>
+                                    <label class="form-check-label" for="CaptialSentencedButton"> Capital Punishment (Sentenced) </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="CapitalExecutedButton"/>
+                                    <label class="form-check-label" for="CapitalExecutedButton"> Capital Punishment (Executed) </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="PrisonMortalityButton"/>
+                                    <label class="form-check-label" for="PrisonMortalityButton"> Prison Mortality Rates </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="JailMortalityButton"/>
+                                    <label class="form-check-label" for="JailMortalityButton"> Jail Mortality Rates </label>
+                                </div>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
 
