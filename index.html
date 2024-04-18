@@ -6,22 +6,22 @@
         
         <!-- Custom styles -->
         <link rel="stylesheet" href="css/style.css">
-        <!-- Bootstrap CSS CDN -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-        <!-- Scrollbar Custom CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-        
         <!-- jQuery -->
         <!-- jQuery CDN - Slim version (=without AJAX) -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <!-- jQuery Custom Scroller CDN -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-
-        <!-- Bootstrap JS -->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
         
         <!-- Popper.JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+        
+        <!-- Bootstrap JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        
 
         <!-- ArcGIS JS Libraries -->
         <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
@@ -30,6 +30,9 @@
         <!-- Font Awesome JS -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+        
+        <script type="module" src="https://js.arcgis.com/calcite-components/2.7.1/calcite.esm.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/2.7.1/calcite.css" />
         
     </head>
     
@@ -43,45 +46,91 @@
 
                 <ul class="list-unstyled components">
                     <li class="active">
-                        <a href="#AboutSidebar" data-toggle="collapse" aria-expanded="false">About</a>
-                        <ul class="collapse list-unstyled" id="AboutSidebar">
+                        <a href="#AboutSidebar" data-toggle="collapse" aria-expanded="true">About <calcite-icon icon="caret-down" scale="s" /></a>
+                        <ul class="collapse show list-unstyled" id="AboutSidebar">
                             <li>
-                                <p>This application is a project for UW-Madison's GEOG 778. It allows users to explore disparities in various incarceration rate statistics across the United States. WILL ADD MORE INFO LATER.</p>
+                                <p>Welcome to the United States Incarceration Rates Explorer! This application enables users to explore incarceration data and educate themselves on disparities within incarceration across the US.</p>
+                                <p>Expand the 'Toggle Variables' section below to change the layer displayed in the map view. Hover over the (i) icons to read variable definitions.</p>
+                                <p>Once a layer is displayed, click on features in the map to open up popups with charts displaying the variable across time, gender, and race/ethnicity. </p>
+                                <p>Use the buttons on the far right of the map view to search and zoom to a particular location, open the legend, and export a snapshot of the current map view.</p>
+                                <p id="citation">Created by Alicia Wood for GEOG 778, UW-Madison, 2024</p>
                             </li>
                         </ul>
                     </li>
                     <p></p>
                     <li class="active">
-                        <a href="#ToggleVariablesSidebar" data-toggle="collapse" aria-expanded="false">Toggle Variables</a>
+                        <a href="#ToggleVariablesSidebar" data-toggle="collapse" aria-expanded="false">Toggle Variables  <calcite-icon icon="caret-down" scale="s" /></a>
                         <ul class="collapse list-unstyled" id="ToggleVariablesSidebar">
                             <li>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="IncarcerationRateButton" checked/>
-                                    <label class="form-check-label" for="IncarcerationRateButton"> Prison Incarceration Rates </label>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="PrisonIncarcerationRateButton" checked/>
+                                    <label class="form-check-label" for="PrisonIncarcerationRateButton"> Prison Incarceration Rates <calcite-button class="tooltip-button" id="tooltip-button-1" icon-start="information" label="Info"></calcite-button></label>
+                                    <calcite-tooltip label="Data disclaimer" reference-element="tooltip-button-1" style="max-width=90%">
+                                    <span>The total prison population in a jurisdiction as a proportion of every 100,000 residents in that jurisdiction. Data from Bureau of Justice Statistics, 2022.</span>
+                                    </calcite-tooltip>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="JailIncarcerationRateButton"/>
+                                    <label class="form-check-label" for="JailIncarcerationRateButton"> Jail Incarceration Rates <calcite-button class="tooltip-button" id="tooltip-button-2" icon-start="information" label="Info"></calcite-button></label>
+                                    <calcite-tooltip label="Data disclaimer" reference-element="tooltip-button-2" style="max-width=90%">
+                                    <span>The total jail population in a jurisdiction as a proportion of every 100,000 residents in that jurisdiction. Data from Bureau of Justice Statistics, 2019.</span>
+                                    </calcite-tooltip>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="ParoleRateButton"/>
+                                    <label class="form-check-label" for="ParoleRateButton"> Parole Rates <calcite-button class="tooltip-button" id="tooltip-button-3" icon-start="information" label="Info"></calcite-button></label>
+                                    <calcite-tooltip label="Data disclaimer" reference-element="tooltip-button-3" style="max-width=90%">
+                                    <span>The total parole population in a jurisdiction as a proportion of every 100,000 residents in that jurisdiction. Parole population refers to people released from prison and placed under the supervision of parole officers. Data from Bureau of Justice Statistics, 2022.</span>
+                                    </calcite-tooltip>                                    
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="ProbationRateButton"/>
+                                    <label class="form-check-label" for="ProbationRateButton"> Probation Rates <calcite-button class="tooltip-button" id="tooltip-button-4" icon-start="information" label="Info"></calcite-button></label>
+                                    <calcite-tooltip label="Data disclaimer" reference-element="tooltip-button-4" style="max-width=90%">
+                                    <span>The total probation population in a jurisdiction as a proportion of every 100,000 residents in that jurisdiction. Probation population refers to people living in our communities who are under the supervision of probation officers. Probation can be sentenced instead of incarceration, or in addition to incarceration. Data from Bureau of Justice Statistics, 2022.</span>
+                                    </calcite-tooltip>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="YouthRateButton"/>
-                                    <label class="form-check-label" for="YouthRateButton"> Juvenille Incarceration Rates </label>
+                                    <label class="form-check-label" for="YouthRateButton"> Juvenille Incarceration Rates <calcite-button class="tooltip-button" id="tooltip-button-5" icon-start="information" label="Info"></calcite-button></label>
+                                    <calcite-tooltip label="Data disclaimer" reference-element="tooltip-button-5" style="max-width=90%">
+                                    <span>The total population of people under 18 held in juvenile justice facilities on a typical day per 100,000 minors in the population. Data from U.S. Office of Juvenile Justice and Delinquency Prevention, 2021 (via The Sentencing Project).</span>
+                                    </calcite-tooltip>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="FelonyRateButton"/>
-                                    <label class="form-check-label" for="FelonyRateButton"> Felony Disenfranchisement </label>
+                                    <label class="form-check-label" for="FelonyRateButton"> Felony Disenfranchisement <calcite-button class="tooltip-button" id="tooltip-button-6" icon-start="information" label="Info"></calcite-button></label>
+                                    <calcite-tooltip label="Data disclaimer" reference-element="tooltip-button-6" style="max-width=90%">
+                                    <span>The percentage of voting-age residents in a jurisdiction who are disenfranchised (barred from voting) due to a felony conviction. Data from The Sentencing Project, 2022.</span>
+                                    </calcite-tooltip>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="CaptialSentencedButton"/>
-                                    <label class="form-check-label" for="CaptialSentencedButton"> Capital Punishment (Sentenced) </label>
+                                    <label class="form-check-label" for="CaptialSentencedButton"> Capital Punishment (Sentenced) <calcite-button class="tooltip-button" id="tooltip-button-7" icon-start="information" label="Info"></calcite-button></label>
+                                    <calcite-tooltip label="Data disclaimer" reference-element="tooltip-button-7" style="max-width=90%">
+                                    <span>The total population of inmates currently held under a death sentence in that jurisdiction. Data from Bureau of Justice Statistics, 2021.</span>
+                                    </calcite-tooltip>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="CapitalExecutedButton"/>
-                                    <label class="form-check-label" for="CapitalExecutedButton"> Capital Punishment (Executed) </label>
+                                    <label class="form-check-label" for="CapitalExecutedButton"> Capital Punishment (Executed) <calcite-button class="tooltip-button" id="tooltip-button-8" icon-start="information" label="Info"></calcite-button></label>
+                                    <calcite-tooltip label="Data disclaimer" reference-element="tooltip-button-8" style="max-width=90%">
+                                    <span>The total population of prisoners executed in that jurisdiction since 1930. Data from Bureau of Justice Statistics, 2022.</span>
+                                    </calcite-tooltip>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="PrisonMortalityButton"/>
-                                    <label class="form-check-label" for="PrisonMortalityButton"> Prison Mortality Rates </label>
+                                    <label class="form-check-label" for="PrisonMortalityButton"> Prison Mortality Rates <calcite-button class="tooltip-button" id="tooltip-button-9" icon-start="information" label="Info"></calcite-button></label>
+                                    <calcite-tooltip label="Data disclaimer" reference-element="tooltip-button-9" style="max-width=90%">
+                                    <span>Total deaths in state prisons as a proportion of every 100,000 inmates. Data from Bureau of Justice Statistics, 2019.</span>
+                                    </calcite-tooltip>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="JailMortalityButton"/>
-                                    <label class="form-check-label" for="JailMortalityButton"> Jail Mortality Rates </label>
+                                    <label class="form-check-label" for="JailMortalityButton"> Jail Mortality Rates <calcite-button class="tooltip-button" id="tooltip-button-10" icon-start="information" label="Info"></calcite-button></label>
+                                    <calcite-tooltip label="Data disclaimer" reference-element="tooltip-button-10" style="max-width=90%">
+                                    <span>Total deaths in local jails as a proportion of every 100,000 inmates. Data from Bureau of Justice Statistics, 2019.</span>
+                                    </calcite-tooltip>
                                 </div>
                             </li>
                         </ul>

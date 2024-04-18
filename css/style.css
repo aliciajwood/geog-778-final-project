@@ -72,8 +72,8 @@ a:focus {
 }
 
 #sidebar {
-    min-width: 260px;
-    max-width: 260px;
+    min-width: 294px;
+    max-width: 294px;
     background: #93331e;
     color: #fff;
     transition: all 0.3s;
@@ -84,7 +84,7 @@ a:focus {
 }
 
 #sidebar.active {
-    margin-left: -260px;
+    margin-left: -294px;
 }
 
 #sidebar .sidebar-header {
@@ -145,7 +145,29 @@ ul ul a {
 }
 */
 
+#sidebar ul li ul li div label button{
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+    color:white;
+    background-color:transparent;
+}
 
+.tooltip-button{
+    --calcite-color-brand: #93331e;
+    --calcite-color-brand-hover: #7E2C1A;
+    height: 30px;
+    width: 20px;
+}
+
+.collapse-arrow{
+    height:30px;
+}
+
+#citation{
+    font-size:0.6em;
+    font-weight: 400;
+}
 
 /* ---------------------------------------------------
     CONTENT STYLE
@@ -171,7 +193,7 @@ ul ul a {
 
 @media (max-width: 768px) {
     #sidebar {
-        margin-left: -260px;
+        margin-left: -294px;
     }
     #sidebar.active {
         margin-left: 0;
